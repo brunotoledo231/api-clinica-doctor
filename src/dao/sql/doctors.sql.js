@@ -1,21 +1,21 @@
 import pool from "../../utils/db.js"
 
 class Doctor {
-    constructor(){}
-    createDoctor = async (doctorInfo) => {
-        const { user_id, specialty_id } = doctorInfo;
-        const query = 'INSERT INTO Doctors (user_id, specialty_id) VALUES (?, ?)';
-        try {
-            const result = await pool.query(query, [user_id, specialty_id]);
-            return result;
-        } catch (error) {
-            throw error;
-        }
-    };
+    constructor(){}    
+    create = async(doctor) => {
+        const data = await pool.query('INSERT INTO Doctors (user_id, specialty_id) VALUES (?, ?)', [doctor.user_id, doctor.specialty_id]) 
+        return data[0]
+    }
+
+
+
     getAll = async() => {
         const data = await pool.query('SELECT * FROM Doctors')
         return data
     }
+
+    
+
     getOneById = async(id) => {
         const data = await pool.query('SELECT * FROM Doctors WHERE id =?', [id])
         return data[0]
