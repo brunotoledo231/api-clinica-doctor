@@ -3,7 +3,7 @@ import PersonRepository from './persons.repository.js'
 import DoctorRepository from './doctor.repository.js'
 import {user} from '../dao/sql/users.sql.js'
 import {person} from '../dao/sql/persons.sql.js'
-import {doctor} from '../dao/sql/doctors.js'
+import {doctor} from '../dao/sql/doctors.sql.js'
 
 export const UserService = new UserRepository(user)
 export const PersonService = new PersonRepository(person)
