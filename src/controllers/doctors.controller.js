@@ -1,5 +1,5 @@
 import { validationResult } from 'express-validator';
-import {UserService} from '../repository/index.js'
+import { UserService} from '../repository/index.js'
 import { PersonService } from '../repository/index.js';
 import { comparePassword, hashPassword } from '../utils/hashedPass.js';
 import { DoctorService } from '../repository/index.js';
