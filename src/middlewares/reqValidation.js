@@ -31,6 +31,8 @@ export const createUserValidator = [
     body('role_id').notEmpty().withMessage('role_id cant be empty!')
     .isNumeric().withMessage('role_id must be a number!')
     .isIn([5,6,7,8]).withMessage('role_id must be a valid number value from roles table!'),
+    //dentro de la tabla doctors si el administrador crea una cuenta de doctor, en el front se puedde hacer 
+    //la validacion con el form de creacion de persona 
 ]
 
 export const logInValidator = [
