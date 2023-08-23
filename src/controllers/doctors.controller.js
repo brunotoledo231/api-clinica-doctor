@@ -56,7 +56,7 @@ export const createDoctor = async(req,res,next) => {
  export const getAllDoctors = async(req,res,next) => {
     console.log('controllers.getAllDoctors hitted');
     try {
-        const data = await UserService.getAllDoctors()
+        const data = await DoctorService.getAllDoctors()
         res.json({
             status: 'OK',
             payload: data[0]
