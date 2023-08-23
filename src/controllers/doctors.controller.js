@@ -1,7 +1,7 @@
 import { validationResult } from 'express-validator';
 import {UserService} from '../repository/index.js'
 import { PersonService } from '../repository/index.js';
-// import { comparePassword, hashPassword } from '../utils/hashedPass.js';
+import { comparePassword, hashPassword } from '../utils/hashedPass.js';
 import { DoctorService } from '../repository/index.js';
 
 export const createDoctor = async(req,res,next) => { 
@@ -34,7 +34,7 @@ export const createDoctor = async(req,res,next) => {
         userInfo.password = hashedPass;
         const { insertId: userId } = await UserService.createUser(userInfo);
 
-        if (req.body.role_id === 'cardiology') {
+        if (req.body.role_id === 'PROFESIONAL') {
             // If the new user is a doctor, create a doctor entry.
             const doctorInfo = {
                 doctor_id: null, // Assuming it's autoincremental
