@@ -53,4 +53,24 @@ export const createDoctor = async(req,res,next) => {
     }
  }
 
+ export const getAllDoctors = async(req,res,next) => {
+    console.log('controllers.getAllDoctors hitted');
+    try {
+        const data = await UserService.getAllDoctors()
+        res.json({
+            status: 'OK',
+            payload: data[0]
+        })
+        
+    } catch (error) {
+        res.status(500).json({
+            status: 'failed',
+            payload: {
+                message:error.message,
+                stack:error.stack
+            }
+        })
+    }
+}
+
 

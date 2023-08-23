@@ -1,9 +1,10 @@
 import {Router} from 'express'
-import {createDoctor} from '../controllers/doctors.controller.js'
+import {createDoctor,getAllDoctors} from '../controllers/doctors.controller.js'
+
 
 
 
 const router = Router()
-router.get('/',getAllDoctor)
+router.get('/',getAllDoctors)
 router.post('/newDoctor', createDoctor)
 export default router
